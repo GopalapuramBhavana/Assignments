@@ -1,0 +1,74 @@
+ProfileCard.js code :
+import React from "react";
+
+const ProfileCard = ({ name, greeting, imageSrc }) => {
+  return (
+    <div className="p-4 border rounded-lg shadow-md w-64 text-center bg-white">
+      <img src={imageSrc} alt={name} className="w-24 h-24 rounded-full mx-auto" />
+      <h2 className="text-lg font-semibold mt-2">{name}</h2>
+      <p className="text-gray-600">{greeting}</p>
+    </div>
+  );
+};
+
+export default ProfileCard;
+App.js code :
+import React from "react";
+import ProfileCard from "./ProfileCard";
+import './App.css'
+
+const App = () => {
+  return (
+    <div>
+      <h1>User Profiles</h1>
+      <div className="profile-container">
+        <ProfileCard
+          name="Jeshwitha"
+          greeting="Hello! I love travelling."
+          imageSrc="https://www.mruexams.com/SBCMSSTUDENT/Frm_StudentPhoto.aspx?StudentCode=10583"
+        />
+        <ProfileCard
+          name="Anusha"
+          greeting="Hey there! I enjoy painting."
+          imageSrc="https://www.mruexams.com/SBCMSSTUDENT/Frm_StudentPhoto.aspx?StudentCode=10620"
+        />
+        <ProfileCard
+          name="Vaishnavi"
+          greeting="Hi! I love sleeping."
+          imageSrc="https://www.mruexams.com/SBCMSSTUDENT/Frm_StudentPhoto.aspx?StudentCode=10589"
+        />
+        <ProfileCard
+          name="SaiPriya"
+          greeting="Hi! I love dancing."
+          imageSrc="https://www.mruexams.com/SBCMSSTUDENT/Frm_StudentPhoto.aspx?StudentCode=10565"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default App;
+App.css code :
+.profile-card {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; 
+  
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
